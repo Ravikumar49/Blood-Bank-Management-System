@@ -37,7 +37,7 @@ public class DonorDAO {
     }
 
     public static int addDonor(Donor donor) {
-        String query = "INSERT INTO donors (name, age, blood_group, phone, last_donation_date, medical_issue) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO donors (name, age, blood_group, phone,  medical_issue, last_donation_date) VALUES (?, ?, ?, ?, ?, CURDATE())";
         
         try (java.sql.Connection conn = util.DBConnection.getConnection();
              // RETURN_GENERATED_KEYS tells MySQL to give the ID back!
